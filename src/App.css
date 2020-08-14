@@ -1,0 +1,52 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css";
+
+* {
+  border: none;
+  padding: none;
+  list-style: none;
+}
+
+body .app {
+  margin: 6em auto;
+  border: thin #837c7c solid;
+  width: 20vw;
+  /* height: 120vh; */
+}
+
+body .app .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: Times, serif;
+}
+
+body .app .nav i {
+  padding: 1.5em;
+}
+
+body .app .container {
+  text-align: center;
+  padding: 2em 2em;
+}
+
+body .app .container .photo {
+  border: thin black solid;
+  /* background-image: url(https://media.vanityfair.com/photos/5f317ab2ea4a2b0e8b864486/16:9/w_250,c_limit/kanye.jpg); */
+  background-size: cover;
+  width: 100%;
+ 
+}
+
+body .app .container .photo img{
+  display: block;
+  width:100%;
+}
+
+body .app .container .line {
+  border-bottom: 6px black solid;
+  margin-bottom: 2em;
+}
+/*# sourceMappingURL=style.css.map */
