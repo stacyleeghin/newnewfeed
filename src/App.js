@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import Article from './Article'
 import './App.css';
 
+var token = '07e9ec085fb5b0577cb5680e6f00f23e'
+
 class App extends Component {
 
   constructor(props){
     super(props)
     this.state = {
-      var token = '07e9ec085fb5b0577cb5680e6f00f23e'
+    
       // articles:[
       //   {
       //     description: "Here, in Part 2 of our special three-part series, The Advertiser profiles the worst the South Australian business scene has to ... “I suspect you will never commit offences of this type again, mainly ...",
@@ -35,8 +37,10 @@ class App extends Component {
   }
 
 
-  function loadArticlesByTopic(topic){
-    var url = 'https://gnews.io/api/v3/topics/'+topic+'?token='+token
+ 
+  loadArticlesByTerm = (term)=>{
+
+    var url = 'https://gnews.io/api/v3/search?q='+term+'&token='+token
     fetch(url)
       .then( res=>res.json())
       .then((data)=>{
@@ -44,21 +48,11 @@ class App extends Component {
         console.log(articles)
       })
   }
-function loadArticlesByTerm(term){
 
-	var url = 'https://gnews.io/api/v3/search?q='+term+'&token='+token
-	fetch(url)
-		.then( res=>res.json())
-		.then((data)=>{
-			var articles = data.articles
-			console.log(articles)
-		})
-}
 
-// testing 
-loadArticlesByTopic('business')
-loadArticlesByTerm('oil')
-
+  componentDidMount(){
+    this.loadArticlesByTerm('covid')
+  }
   render (){
 
     return(
